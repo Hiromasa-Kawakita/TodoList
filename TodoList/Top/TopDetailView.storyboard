@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dLo-99-LhM">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Top Detail View Controller-->
+        <scene sceneID="vVY-iM-Ux5">
+            <objects>
+                <viewController id="dLo-99-LhM" customClass="TopDetailViewController" customModule="Collection_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Anh-vI-gH1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MIl-NZ-bcT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wbF-Eu-0dz">
+                                    <size key="itemSize" width="200" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="X55-HH-Rkk" firstAttribute="trailing" secondItem="MIl-NZ-bcT" secondAttribute="trailing" id="H2h-af-cz1"/>
+                            <constraint firstItem="MIl-NZ-bcT" firstAttribute="top" secondItem="X55-HH-Rkk" secondAttribute="top" id="Lux-wf-CI5"/>
+                            <constraint firstItem="MIl-NZ-bcT" firstAttribute="leading" secondItem="X55-HH-Rkk" secondAttribute="leading" id="k6r-DV-atf"/>
+                            <constraint firstItem="X55-HH-Rkk" firstAttribute="bottom" secondItem="MIl-NZ-bcT" secondAttribute="bottom" id="vtr-fA-LPl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="X55-HH-Rkk"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="izk-as-KIK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="pyr-ch-vvG">
+                            <color key="tintColor" red="0.98649995914534139" green="1" blue="0.12720781072737863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="editButton:" destination="fyI-53-ryq" id="yZV-B5-yda"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="topDetailCollection" destination="MIl-NZ-bcT" id="VAI-cF-9f8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gbJ-Aa-dRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fyI-53-ryq" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3694.202898550725" y="111.83035714285714"/>
+        </scene>
+    </scenes>
+</document>

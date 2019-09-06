@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="detailCellXib" id="gTV-IL-0wX" customClass="TopDetailCollectionViewCell" customModule="Collection_test" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="489"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="420" height="489"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Todo Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="imW-y2-GMW" customClass="HoshiTextField" customModule="TextFieldEffects">
+                        <rect key="frame" x="20" y="10" width="380" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="ASd-GA-fOb"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                <color key="value" red="0.20000001789999999" green="0.70588237050000002" blue="0.5647059083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                <real key="value" value="0.65000000000000002"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                <color key="value" red="0.20000001789999999" green="0.70588237050000002" blue="0.5647059083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </textField>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QuV-Ed-Vfc" customClass="FSCalendar">
+                        <rect key="frame" x="5" y="80" width="410" height="404"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="imW-y2-GMW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="4lB-dd-Xbl"/>
+                <constraint firstItem="QuV-Ed-Vfc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="CCj-uA-Ud7"/>
+                <constraint firstItem="QuV-Ed-Vfc" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="GD9-Nu-17c"/>
+                <constraint firstAttribute="trailing" secondItem="QuV-Ed-Vfc" secondAttribute="trailing" constant="5" id="MaL-zy-XFY"/>
+                <constraint firstAttribute="bottom" secondItem="QuV-Ed-Vfc" secondAttribute="bottom" constant="5" id="XO4-oS-7HA"/>
+                <constraint firstAttribute="trailing" secondItem="imW-y2-GMW" secondAttribute="trailing" constant="20" id="acQ-O3-1AC"/>
+                <constraint firstItem="QuV-Ed-Vfc" firstAttribute="top" secondItem="imW-y2-GMW" secondAttribute="bottom" constant="10" id="bhm-8L-aA8"/>
+                <constraint firstItem="imW-y2-GMW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="cZQ-En-fR6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="462" height="489"/>
+            <connections>
+                <outlet property="todoTextField" destination="imW-y2-GMW" id="n5E-di-t6b"/>
+            </connections>
+            <point key="canvasLocation" x="97.101449275362327" y="315.73660714285711"/>
+        </collectionViewCell>
+    </objects>
+</document>
