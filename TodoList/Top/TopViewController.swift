@@ -16,6 +16,9 @@ class TopViewController: UIViewController {
     private var todoList: Results<TodoItem>!
     private var token: NotificationToken!
     
+    var scrollBeginPoint: CGFloat = 0.0
+    var lastNavigationBarIsHidden = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -34,6 +37,11 @@ class TopViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        
+        // TopDetailViewから戻ってきた時のnavigationbar再壁画
+        if lastNavigationBarIsHidden {
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+        }
     }
     
     override func viewDidLoad() {
@@ -43,16 +51,46 @@ class TopViewController: UIViewController {
         
         topTable.delegate = self
         topTable.dataSource = self
-//        topTableView.delegate = self
-//        topTableView.dataSource = self
 
         reload()
-        
     }
     
-    override func viewWillLayoutSubviews() {
-        reload()
+
+    /*---------------------------------------------------
+     *スクロール時のnavigationbar表示/非表示
+     *---------------------------------------------------
+     */
+    // スクロール開始位置
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        scrollBeginPoint = scrollView.contentOffset.y
     }
+    
+    // スクロール量
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollDiff = scrollBeginPoint - scrollView.contentOffset.y
+        updateNavigationBarHiding(scrollDiff: scrollDiff)
+    }
+    
+    // navigationbarの表示/非表示
+    func updateNavigationBarHiding(scrollDiff: CGFloat) {
+        let boundaryValue: CGFloat = 0.0
+        
+        /// navigationBar表示
+        if scrollDiff > boundaryValue {
+            navigationController?.setNavigationBarHidden(false, animated: true)
+            lastNavigationBarIsHidden = false
+            return
+        }
+        
+        /// navigationBar非表示
+        if scrollDiff < -boundaryValue {
+            navigationController?.setNavigationBarHidden(true, animated: true)
+            lastNavigationBarIsHidden = true
+            return
+        }
+    }
+    
+    
     
     
     @IBAction func createTodoButton(_ sender: UIBarButtonItem) {

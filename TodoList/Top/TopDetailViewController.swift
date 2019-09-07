@@ -27,6 +27,9 @@ class TopDetailViewController: UIViewController {
         
         title = "詳細"
         
+        // navigationbar表示(topViewで非表示になっている場合があるので)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        
         topDetailCollection.delegate = self
         topDetailCollection.dataSource = self
         
